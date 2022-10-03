@@ -1,0 +1,12 @@
+
+1.(convert darknet weights to tensorflow)
+python save_model.py --weights ./data/yolov4.weights --output ./checkpoints/yolov4-416 --input_size 416 --model yolov4 
+
+2. (run yolov4 tensorflow model images)
+python detect.py --weights ./checkpoints/yolov4-416 --size 416 --model yolov4 --images ./data/images/kite.jpg --output ./detections/pic	dog.jpg ; car1.webp
+
+3. (on video)
+python detect_video.py --weights ./checkpoints/yolov4-416 --size 416 --model yolov4 --video ./data/video/video.mp4 --output ./detections/results.avi
+
+4. (on webcam)
+python detect_video.py --weights ./checkpoints/yolov4-416 --size 416 --model yolov4 --video 0 --output ./detections/results.avi
